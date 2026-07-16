@@ -319,11 +319,14 @@
     </footer>
 
     <script>
-      document
-        .getElementById("scroll-to-top")
-        .addEventListener("click", function () {
+      var scrollToTop = document.getElementById("scroll-to-top");
+      if (scrollToTop) {
+        scrollToTop.addEventListener("click", function () {
           window.scrollTo({ top: 0, behavior: "smooth" });
         });
+      } else {
+        console.error('Element with id "scroll-to-top" was not found.');
+      }
     </script>
   </body>
 </html>
